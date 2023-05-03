@@ -1,0 +1,22 @@
+.floating-button.inverted {
+
+  background-color: #111314;
+  color: rgb(209, 209, 209);
+
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(209, 209, 209);
+  color: #111314;
+  padding: 10px;
+  border-radius: 20px;
+  width: 70px;
+  font-size: 25px;
+  height: 50px;
+  border-color: #00000000;
+  cursor: pointer;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

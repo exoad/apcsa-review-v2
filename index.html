@@ -1,0 +1,838 @@
+<!--
+ Software created by Jack Meng (AKA exoad). Licensed by the included "LICENSE" file. If this file is not found, the project is fully copyrighted.
+-->
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style/buttons.css" />
+  <link rel="stylesheet" href="style/main.css" />
+  <title>AP:CSA</title>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const button = document.querySelector(".floating-button");
+
+      body.classList.toggle("dark-mode");
+      button.classList.toggle("inverted");
+      button.innerHTML = body.classList.contains("dark-mode")
+        ? "<strong>&#127769</strong>"
+        : "<strong>&#x1F506;</strong>";
+    }
+  </script>
+</head>
+
+<body>
+  <button class="floating-button" onClick="toggleDarkMode()">
+    <strong>&#x1F506;</strong>
+  </button>
+
+  <h1>ap comp-sci:a test cram</h1>
+  <p class="subtitle">
+    <em> for 2023+ test takers &#128155;</em>
+    <br />
+    <br />
+    <em>
+      <a href="pages/lick.html" rel="noopener noreferrer" title="click me"
+        >source code license</a
+      ></em
+    >
+  </p>
+  <div class="divider_container">
+    <div class="divider"></div>
+  </div>
+  <p style="text-align: center; font-size: 11.5px">
+    <em>
+      &#10071; this resource assumes you already know somethings about Java<br />it
+      also does not cover things you don't need to know (take with a grain salt)
+    </em>
+  </p>
+
+  <div class="contentbox">
+    <div class="cb_content">
+      <h2 class="cb_content_header"><u>helpful resources</u></h2>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/exoad/ap-compsci-a/tree/master/resource/review"
+            rel="noopener noreferrer"
+            title="click me"
+            >Review Sheets</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://apcentral.collegeboard.org/media/pdf/ap22-sg-computer-science-a.pdf"
+            rel="noopener noreferrer"
+            title="click me"
+            >2022 FRQ Scoring Guidelines</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/exoad/ap-compsci-a/blob/master/resource/review/quick_reference.pdf"
+            rel="noopener noreferrer"
+            title="click me"
+            >Reference Sheet</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <div class="contentbox">
+    <div class="cb_content">
+      <h2 class="cb_content_header">
+        <u> introductory </u>
+      </h2>
+      <ul>
+        <li class="note">
+          <strong>printing a string:</strong>
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre
+              style="margin: 0; line-height: 125%"
+            ><span style="color: #d0d0d0">  System.</span><span style="color: #bbbbbb">out</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">println</span><span style="color: #d0d0d0">(</span><span style="color: #ed9d13">&quot;With a new line&quot;</span><span style="color: #d0d0d0">);</span>
+  <span style="color: #d0d0d0">System.</span><span style="color: #bbbbbb">out</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">print</span><span style="color: #d0d0d0">(</span><span style="color: #ed9d13">&quot;Without new line&quot;</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+          <ul>
+            <li>
+              <code>ln</code> signifies that a new line will be printed after
+              the supplied content is printed
+            </li>
+            <li>
+              <code>System.out.print() System.out.println()</code> both can be
+              called without parameters, but <code>println</code> is usually
+              called when we just want a new line
+            </li>
+            <li>
+              <code>System.out.print('\n')</code> is the same as
+              <code>System.out.println()</code>
+            </li>
+          </ul>
+        </li>
+        <li class="note">
+          <strong>comments</strong> - you can add notes that won't affect your
+          code
+          <ul>
+            <li>
+              <em>regular comments</em>
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+  <span style="color: #999999; font-style: italic">// this is a one line comment</span>
+
+  <span style="color: #999999; font-style: italic">/*</span>
+  <span style="color: #999999; font-style: italic"> * this is a multi line comment</span>
+  <span style="color: #999999; font-style: italic"> */</span></pre>
+              </div>
+            </li>
+            <li>
+              &#x26D4; <em>javadoc style comments</em> - you will see these
+              mostly in question formatting! don't worry about this!
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+  <span style="color: #999999; font-style: italic">/**</span>
+  <span style="color: #999999; font-style: italic"> * my description here!</span>
+  <span style="color: #999999; font-style: italic"> * @param my parameter for my method</span>
+  <span style="color: #999999; font-style: italic"> * @return what this method returns</span>
+  <span style="color: #999999; font-style: italic"> */</span></pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="contentbox">
+    <div class="cb_content">
+      <h2 class="cb_content_header">
+        <u>data types </u>
+      </h2>
+      <ul>
+        <li class="note">
+          <strong>boxed typed</strong>
+          <code>java.lang.Integer</code
+          >,<code>java.lang.Character</code>,<code>java.lang.Boolean</code>,<code>java.lang.Double</code>,<code>java.lang.Float</code>,<code>java.lang.Short</code>,<code
+            >java.lang.Long</code
+          >
+        </li>
+        <ul>
+          <li>
+            refers to an <code>Object</code> representation of a regular
+            primitive type (int, double, float, etc.).
+          </li>
+          <li>
+            they are primarily used because of Java's nature with generics only
+            accepting <code>Object</code> type
+          </li>
+          <li>
+            you can see this in action in a class like
+            <code>java.util.ArrayList</code> or identified when the angle
+            brackets are used (<, >)
+            <!-- this is probably not a good way to do this -->
+          </li>
+        </ul>
+        <li class="note">
+          <strong>type casting</strong> refers to changing one variable's data
+          type to another
+          <ul>
+            <li>
+              we can exchange certain types of data between each other ONLY
+            </li>
+            <li>
+              <strong>explicit cast</strong> when you, the programmer, explicity
+              state the cast
+
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+    <span style="color: #d0d0d0">Type</span> <span style="color: #d0d0d0">myVar</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">(AnotherType)</span> <span style="color: #d0d0d0">value;</span>
+</pre>
+              </div>
+            </li>
+            <li>
+              <strong>implicit cast</strong> when the compiler handles casting
+              automatically by following this ordering:
+              <br />
+              <code> double -> float -> long -> int -> short -> byte </code>
+              <br />
+              which type is more to the right (more wide) gets the pick by the
+              compiler to be casted to
+              <ul>
+                <li>
+                  for example, when ever a <code>double</code> and
+                  <code>long</code> are in the same expression, since
+                  <code>double</code> is more "wide" or higher up in the
+                  ordering, the compiler chooses to cast the original
+                  <code>long</code> value to a <code>double</code>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="note">
+          <strong>integer</strong> <code>int</code>,<code
+            >java.lang.Integer</code
+          >
+          <ul>
+            <li>represents a whole number or a regular integer</li>
+            <li>is not a floating point number (not a decimal)</li>
+            <li>default initializes to 0 -> <code>int myInt;</code></li>
+            <li>
+              to get the max value of the integer type, use
+              <code>Integer.MAX_VALUE</code> -> <code>2147483647</code>
+            </li>
+            <li>
+              to get the minimum value of the integer type, use
+              <code>Integer.MIN_VALUE</code> -> <code>-2147483648</code>
+            </li>
+            <li>
+              if the aforementioned limits are exceeded, an
+              <strong>overflow/underflow</strong> may happen where if the value
+              is too big -> becomes super small and vice versa
+            </li>
+          </ul>
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">primitiveInt</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">69</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">Integer</span> <span style="color: #d0d0d0">boxedVersion</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Integer(</span><span style="color: #3677a9">69</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+        </li>
+        <li class="note">
+          <strong>double</strong> <code>double</code>,<code
+            >java.lang.Double</code
+          >
+          <ul>
+            <li>represents a floating point (aka a decimal)</li>
+            <li>
+              default initialization to <code>0.0</code> ->
+              <code>double myUnInitializedDouble;</code>
+            </li>
+            <li>
+              similar to the <code>Integer</code>, you can use
+              <code>Double.MAX_VALUE</code> and <code>Double.MIN_VALUE</code> to
+              get the appropriate representable range and can suffer from
+              overflow and underflow
+            </li>
+            <li>
+              range from
+              <code
+                >[1.7976931348623157*10^308, 4.9406564584124654*10^-324]</code
+              >
+            </li>
+          </ul>
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">double</span> <span style="color: #d0d0d0">primitiveInt</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">0.392</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">Double</span> <span style="color: #d0d0d0">boxedVersion</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Double(</span><span style="color: #3677a9">31.3231</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+        </li>
+        <li class="note">
+          <strong>character</strong> <code>char</code>,<code
+            >java.lang.Character</code
+          >
+          <ul>
+            <li>
+              represents a keyboard character or some kind of ASCII character
+              (&#x26D4; UTF-8 and other encoding types are not tested are on)
+            </li>
+            <li>
+              since it is a more "visual" way to define an ASCII character, it
+              can be casted to
+            </li>
+            <li>
+              it is an unsigned (meaning without <code>+ -</code> signs -> only
+              positive or 0) integer in the range of
+              <code>[0, 65535]</code>
+            </li>
+            <li>you can think of it as a letter in a word</li>
+            <li>
+              to represent this value, you use the <code>'</code> single quote
+              on both side of the character
+            </li>
+          </ul>
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">char</span> <span style="color: #d0d0d0">primitiveCharacter</span> <span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&#39;c&#39;</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">Character</span> <span style="color: #d0d0d0">boxedVersion</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Character(</span><span style="color: #ed9d13">&#39;1&#39;</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+        </li>
+        <li class="note">
+          <strong>boolean</strong> <code>boolean</code>,<code
+            >java.lang.Boolean</code
+          >
+          <ul>
+            <li>represents a <code>true</code> or <code>false</code> value</li>
+            <li>
+              this type is SPECIAL in that it cannot be casted to any other
+              primitive types
+            </li>
+            <li>initialized default to <code>false</code></li>
+          </ul>
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">boolean</span> <span style="color: #d0d0d0">primitiveBoolean</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">Boolean</span> <span style="color: #d0d0d0">boxedVersion</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Boolean(</span><span style="color: #6ab825; font-weight: bold">false</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+        </li>
+        <li>
+          <strong>string</strong> <code>String</code>,<code
+            >java.lang.String</code
+          >
+          <ul>
+            <li>
+              they can be thought of as a list of regular
+              <code>char</code> values
+            </li>
+            <li>
+              compared to <code>char</code>, <code>String</code> use
+              <code>"</code> (double quotes) to encase its value(s)
+            </li>
+            <li>
+              <code>String</code>s are <strong>IMMUTABLE</strong>
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+    <span style="color: #d0d0d0">String</span> <span style="color: #d0d0d0">str1</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;A&quot;</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">String</span> <span style="color: #d0d0d0">str2</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;B&quot;</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">str1</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">str1</span> <span style="color: #d0d0d0">+</span> <span style="color: #ed9d13">&quot;C&quot;</span><span style="color: #d0d0d0">;</span>
+</pre>
+              </div>
+              here <code>str2</code> would not be the same as
+              <code>str1</code> because Java creates a new object everytime the
+              original object is modified, meaning Strings are immutable, where
+              the modified object is discarded
+            </li>
+
+            <li>
+              you might have seen <code>\n</code> which is used to represent the
+              new line control character, you can use the backslash
+              <code>\</code> to print special characters or to override ones
+              that are quoted
+            </li>
+            <li>
+              <strong>literal vs object</strong> when a string is initialized
+              with double quotes, Java checks the pool of existing strings to
+              see if it can find duplicates and optimized. on the other hand,
+              with the <code>new</code> keyword, we create an object and the
+              Java runtime does not perform such check and cause unnecessary
+              memory usage (where Objects are located on the heap)
+            </li>
+            <li>
+              the String type is very knitted with its Object counterpart, where
+              you are easily able to use methods on the value like so:
+              <code>"Hi There!".toLowerCase()</code>
+              <ol>
+                <li>
+                  <code>toLowerCase()</code> - makes all possible "A" through
+                  "Z" be their lowercase counterparts
+                </li>
+                <li>
+                  <code>toUpperCase()</code> - makes all possible "a" through
+                  "z" be their uppercase counterparts
+                </li>
+                <li>
+                  <code>length()</code> - how many characters make up this
+                  String
+                </li>
+                <li>
+                  <code>substring(int from, int to)</code> - returns a part of a
+                  String (aka returns a String) starting from index
+                  <code>from</code> and ending with <code>to - 1</code>
+                </li>
+                <li>
+                  <code>substring(int from)</code> - similar to calling
+                  <code>substring(from, length())</code>
+                </li>
+                <li>
+                  <code>indexOf(String str)</code> - returns the index of the
+                  first occurence of the parameter, returns -1 if not found
+                </li>
+                <li>
+                  <code>equals(String str)</code> - returns a boolean on whether
+                  the two strings are equal based on content
+                  <strong
+                    >DO NOT USE <code>==</code> to check if two are the same
+                    based on content and not memory location</strong
+                  >
+                </li>
+              </ol>
+            </li>
+          </ul>
+
+          <div
+            style="
+              background-color: #111314;
+              overflow: auto;
+              font-size: 15px;
+              border: solid #333333;
+              border-radius: 13px;
+              padding: 0.2em 0.6em;
+            "
+          >
+            <pre style="margin: 0; line-height: 125%">
+    <span style="color: #d0d0d0">String</span> <span style="color: #d0d0d0">literalString</span> <span style="color: #d0d0d0">=</span> <span style="color: #ed9d13">&quot;hi there&quot;</span><span style="color: #d0d0d0">;</span>
+    <span style="color: #d0d0d0">String</span> <span style="color: #d0d0d0">objectString</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">String(</span><span style="color: #ed9d13">&quot;:)&quot;</span><span style="color: #d0d0d0">);</span>
+</pre>
+          </div>
+        </li>
+        <li class="note">
+          <strong>arrays</strong>
+          <ul>
+            <li>arrays are like lists</li>
+            <li>
+              they are declared following the type declaration with
+              <code>[]</code> like:
+              <code>Type[] myArray = new Type[size]</code> where
+              <code>size</code> is how many elements the array can hold. the
+              <code>Type</code> attribute can be both Objects, primitives, or
+              other arrays of the same type (2D arrays! d ND arrays!) -> 2D
+              array:
+              <code>Type[][] my2DArray = new Type[row_size][column_size]</code>
+            </li>
+            <li>
+              the size of an array cannot be changed and can only be changed by
+              overwriting it <strong>IMMUTABLE</strong>
+            </li>
+            <li>
+              initializing with pre-existing elements:
+              <code
+                >Type[] myArray = new Type[]{ element_0, element_1, ...}</code
+              >
+              notice how the size parameter is not needed. For a 2D array we can
+              follow the following format (for an N-Dimension Array, just append
+              more bracket pairs):
+              <code>
+                Type[][] myArray = new Type[][]{ {element_0_0, element_0_1,
+                ...}, { element_1_0, element_1_1, ...}, ...}
+              </code>
+            </li>
+            <li>
+              to access an element we use <code>myArray[index]</code>. note that
+              indexing starts at 0, meaning if you want to access element 2, it
+              would be <code>myArray[1]</code> (i.e. you do "canonical_index-1")
+              and goes up to <code>myArray.length-1</code>. For an n-dimension
+              array, like a 2D array, you have to additional bracket pairs
+              depending on the dimension. For example, a 2D array uses
+              <code>myArray[row_index][column_index]</code>
+            </li>
+            <li>
+              if accessing goes out of bounds (i.e. you provide an invalid
+              index), an <code>ArrayIndexOutOfBoundsException</code> will be
+              thrown
+            </li>
+            <li>
+              to avoid the aforementioned potential for going out of bound we
+              can utilize the length of the array to help us keep ourself in
+              check with <code>myArray.length</code>.
+              <em
+                >note that is it not a method and is a field builtin into the
+                type itself</em
+              >
+            </li>
+            <li>
+              when you access an element, you can treat it as both a regular
+              data value or a variable itself, here's an example of swapping two
+              values in an <code>int[]</code> array:
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+      <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">tempVariable</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">myArr[</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">];</span>
+      <span style="color: #d0d0d0">myArr[</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">myArr[myArr.</span><span style="color: #bbbbbb">length</span> <span style="color: #d0d0d0">-</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">];</span>
+      <span style="color: #d0d0d0">myArr[myArr.</span><span style="color: #bbbbbb">length</span> <span style="color: #d0d0d0">-</span> <span style="color: #3677a9">1</span><span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">tempVariable;</span>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contentbox">
+    <div class="cb_content">
+      <h2 class="cb_content_header">classes n objects</h2>
+      <ul>
+        <li class="note">
+          objects <code>java.lang.Object</code>
+          <ul>
+            <li>
+              objects are instances of classes that pertain certain attributes
+              (think of it as the final product of a blueprint)
+            </li>
+            <li>
+              like arrays and boxed types (which are objects), we use the
+              <code>new</code> keyword to create a new object like so:
+              <code>MyObj variable = new MyObj()</code>
+            </li>
+            <li>
+              due to OOP and Java design, all objects created by the user are a
+              child of <code>java.lang.Object</code>
+            </li>
+            <li>
+              default initialization of all objects is <code>null</code>. if the
+              user tries using the object in any way besides comparison of the
+              raw object, a <code>NullPointerException</code> will be thrown. to
+              prevent this, you can achieve a check:
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+    <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(myObj</span> <span style="color: #d0d0d0">==</span> <span style="color: #6ab825; font-weight: bold">null</span><span style="color: #d0d0d0">)</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #999999; font-style: italic">// handle</span>
+    <span style="color: #d0d0d0">}</span> <span style="color: #6ab825; font-weight: bold">else</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #d0d0d0">System.</span><span style="color: #bbbbbb">out</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">println</span><span style="color: #d0d0d0">(</span><span style="color: #ed9d13">&quot;wow it isn&#39;t null!&quot;</span><span style="color: #d0d0d0">);</span>
+    <span style="color: #d0d0d0">}</span></pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="note">
+          <strong>local v global</strong> - scope
+          <ul>
+            <li>
+              global -> declared at the top of the class usually right after the
+              class declaration's first bracket pair:
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+  <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #447fcf; text-decoration: underline">MyClass</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">myGlobalVariable;</span>
+  <span style="color: #d0d0d0">}</span>
+   </pre>
+              </div>
+            </li>
+            <li>
+              local -> only the most inner scope (aka bracket pairing):
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre style="margin: 0; line-height: 125%">
+  <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #447fcf; text-decoration: underline">MyClass</span> <span style="color: #d0d0d0">{</span>
+   <span style="color: #d0d0d0">...</span>
+
+   <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">myMethod</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">localVariable</span> <span style="color: #d0d0d0">=</span> <span style="color: #3677a9">69</span><span style="color: #d0d0d0">;</span>
+   <span style="color: #d0d0d0">}</span>
+  <span style="color: #d0d0d0">}</span>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong> visibility modifiers </strong> - how data is visible to the
+          class <code>public</code>,<code>private</code>
+          <ul>
+            <li>
+              <strong>Data Encapsulation</strong> → “A pillar of OOP that
+              protects data from being accessed or modified by any part of a
+              program, except with explicit calls to the accessor methods and
+              mutator methods”
+            </li>
+            <li>
+              Private → non-accessible and only within the class itself; not
+              exposed
+            </li>
+            <li>
+              Public → Accessible; exposed (a variable without a visibility
+              modifier is automatically marked as public)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>static vs nonstatic</strong> - <code>static</code>
+          <ul>
+            <li>
+              <strong> static </strong> -> the variable or method belongs to the
+              class and not dependent on the object instance, marked by the
+              <code>static</code> keyword
+            </li>
+            <li>
+              <strong> nonstatic </strong> -> belongs to the object instance and
+              cannot be accessed with just <code>MyClass.method()</code> or
+              <code>MyClass.field</code>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong> classes </strong> - blueprints for creating objects
+          <ul>
+            <li>
+              they follow this template:
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              >
+                <pre
+                  style="margin: 0; line-height: 125%"
+                >
+   <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">class</span> <span style="color: #447fcf; text-decoration: underline">ClassNameHere</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">private</sp> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">fieldsArePrivate;</span>
+
+    <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #447fcf">ClassNameHere</span><span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">val)</span> <span style="color: #d0d0d0">{</span> <span style="color: #999999; font-style: italic">// constructor</span>
+      <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">fieldsArePrivate</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">val;</span>
+    <span style="color: #d0d0d0">}</span>
+
+    <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #447fcf">setField</span><span style="color: #d0d0d0">(</span><span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #d0d0d0">x)</span> <span style="color: #d0d0d0">{</span> <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">fieldsArePrivate</span> <span style="color: #d0d0d0">=</span> <span style="color: #d0d0d0">x;</span> <span style="color: #d0d0d0">}</span>
+
+    <span style="color: #6ab825; font-weight: bold">public</span> <span style="color: #6ab825; font-weight: bold">int</span> <span style="color: #447fcf">getField</span><span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">{</span> <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #6ab825; font-weight: bold">this</span><span style="color: #d0d0d0">.</span><span style="color: #bbbbbb">fieldsArePrivate</span><span style="color: #d0d0d0">;</span> <span style="color: #d0d0d0">}<br>}</span>
+</pre>
+              </div>
+            </li>
+            <li>
+              getters -> return instance fields, in the form of <code>getFieldName</code>, should take no arguments and return the respective type
+            </li>
+            <li>
+              setters -> should overwrite an instance field's value, in the form of <code>setFieldName</code>, should take as many arguments as necessary and return <code>void</code>
+            </li>
+            <li>
+              fields/instance variables should always have the modifier <code>private</code> (and should also not <code>final</code> unless stated)
+            </li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="contentbox">
+    <div class="cb_content">
+      <h2 class="cb_content_header">
+        class mechanics
+      </h2>
+      <ul>
+        <li class="note">
+          <strong>
+            child v parent
+          </strong>
+          <ul>
+            <li>
+              child inherit from parent, aka child extends parent literally using the <code>extends</code> keyword:
+              <code>public class ChildClass extends ParentClass { ... }</code>
+            </li>
+            <li>
+              to go from child to parent, we use the <code>super</code> keyword and behaves similarly to the <code>this</code> keyword
+            </li>
+            <li>
+              if the parent class specifices a specific constructor (that is one that takes parameters), the child class must call super in a method way: <code>super(...)</code> similar to calling another constructor in the same class using <code>this(...)</code>
+            </li>
+          </ul>
+        </li>
+        <li class="note">
+          <strong>
+            inheritance
+          </strong>
+          <ul>
+            <li>
+              when the child class extends on the parent, everything from the parent is automatically inherited (like injected) into the child class that is <code>public</code>
+              <ol>
+                <li>we can call parent methods from child</li>
+                <li>the child class can override methods by simply just restating the parent methods and redefining their functionality. when we initialize said class (where class ,<code>B</code> extends class <code>A</code>:
+                <code>A e = new B()</code> every overriden method in B will be called instead of those in A (unless they are not overriden). However, for this edge case, we can access explicit child methods by casting upwards: <code>((Child)variable).method()</code></li>
+              </ol>
+
+            </li>
+            <li>
+              <strong>parent cannot go to child</strong> only the other way around (<em>"the parent is blind to how many kids it has"</em>):
+              Similarly this also means the following cannot happen:
+
+              <div
+                style="
+                  background-color: #111314;
+                  overflow: auto;
+                  font-size: 15px;
+                  border: solid #333333;
+                  border-radius: 13px;
+                  padding: 0.2em 0.6em;
+                "
+              ><pre style="margin: 0; line-height: 125%"><span style="color: #d0d0d0">Parent</span> <span style="color: #d0d0d0">e</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Parent();</span>
+<span style="color: #d0d0d0">Parent</span> <span style="color: #d0d0d0">e1</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Child();</span>
+<span style="color: #d0d0d0">Child</span> <span style="color: #d0d0d0">e2</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Child();</span>
+<span style="color: #d0d0d0">Child</span> <span style="color: #d0d0d0">e3</span> <span style="color: #d0d0d0">=</span> <span style="color: #6ab825; font-weight: bold">new</span> <span style="color: #d0d0d0">Parent();</span>
+</pre></div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <div style="text-align: center; font-size: 11px">
+    <em>
+      good luck! :3<br />
+      <strong>~exoad~</strong>
+    </em>
+    <br />
+    <p style="color: gray">copyright (c) jack meng 2023</p>
+  </div>
+</body>
