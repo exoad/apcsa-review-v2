@@ -1,5 +1,8 @@
 # APCSA Review
 
+web pre-render: https://exoad.github.io/apcsa-review-v2/
+
+
 This is the second iteration to the original review sheet I created which can be found here:
 https://exoad.github.io/ap-compsci-a/
 
