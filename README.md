@@ -2,6 +2,7 @@
 
 web pre-render: https://exoad.github.io/apcsa-review-v2/
 
+not as up to date PDF pre-render can be found under the `repo` directory
 
 This is the second iteration to the original review sheet I created which can be found here:
 https://exoad.github.io/ap-compsci-a/
